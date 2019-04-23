@@ -2,11 +2,11 @@ class Genre < ActiveRecord::Base
   # add associations
   has_many :songs
 
-  def genre_id=(name)
+  def genre_name=(name)
     self.genre = Genre.find_or_create_by(name: name)
   end
 
-  def genre_id
+  def genre_name
     self.genre ? self.genre.name : nil
   end
 end
