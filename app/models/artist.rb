@@ -3,11 +3,11 @@ class Artist < ActiveRecord::Base
   has_many :songs
   has_many :genres, through: :songs
 
-  def artist_name=(name)
+  def artist=(name)
     self.artist = Artist.find_or_create_by(name: artist_name)
   end
 
-  def artist_name
+  def artist
     self.artist ? self.artist.name : nil
   end
 
