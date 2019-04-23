@@ -6,7 +6,7 @@ class Genre < ActiveRecord::Base
     self.genre = Genre.find_or_create_by(name: name)
   end
 
-  def genre_name
+  def genre_id
     self.genre ? self.genre.name : nil
   end
 end
